@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Book from './BOOKSTORE/book.png'
-const Home = () => {
+const Home = (isAuthenticated) => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [displayData, setDisplayData] = useState([]);
   
@@ -31,6 +32,9 @@ const Home = () => {
         alert("Error adding book: " + error.message);
       }
     };
+    if (!isAuthenticated) {
+        return <Navigate to="/login" />;
+    }
   
     return (
       <div className="HBod">
@@ -57,13 +61,13 @@ const Home = () => {
           </ul>
         </nav>
         <div className="Top">
-            <h1><i>"One Book is Better Than 1000 Friends"<p>-Gajanandha.</p></i></h1>
+            <h1><i>"One Book is Better Than 1000 Friends"<p>-Vivekanandha.</p></i></h1>
         </div>
-        <div className="Top">
+        <div className="Top" id ="kk">
   {displayData.map(({ _id, userid, ...bookData }) => {
     if (bookData.Ratings >= 4.5) {
       return (
-        <div className="topr" key={_id}>
+        <div className="topr" key={_id} >
           <img src={bookData.Book_img} alt="" width="100px" />
           <p>Author Name: {bookData.Author_Name}</p>
           <p>Book Name: {bookData.Book_Name}</p>

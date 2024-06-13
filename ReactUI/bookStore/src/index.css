@@ -19,7 +19,8 @@
   gap: 30px;
   width:700px;
   height: 680px;
-  overflow-x: scroll;
+  margin-Left: 400PX;
+  
 }
 
 .topr {
@@ -267,6 +268,7 @@ body{
    
 
 }
+
 .book {
   display: flex;
   justify-content: center;
@@ -349,4 +351,9 @@ body{
   color:White;
   font-size: larger;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#kk{
+  max-width: 250%;
+  display: flex;
+  justify-content: center;
 }

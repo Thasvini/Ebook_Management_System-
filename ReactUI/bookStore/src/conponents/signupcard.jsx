@@ -39,7 +39,7 @@ const SignUp = () => {
                     PassWord,
                 });
                 console.log("Successfully Added");
-                navigate('/Login');
+                navigate('/');
             }
         } catch (error) {
             console.log("Error:", error);
